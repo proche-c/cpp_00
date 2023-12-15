@@ -32,6 +32,9 @@ private:
 
 	Contact	contacts[8];
 
+	void	show_header();
+	int		find_contact_to_show(int index_to_show);
+
 };
 
 #endif

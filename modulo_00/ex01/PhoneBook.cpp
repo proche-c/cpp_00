@@ -26,7 +26,7 @@ PhoneBook::PhoneBook( void ) {
 
 PhoneBook::~PhoneBook( void )	{
 
-	std::cout << "hasta la vista, baby" << std::endl;
+	//std::cout << "hasta la vista, baby" << std::endl;
 	return ;
 }
 
@@ -55,12 +55,57 @@ void	PhoneBook::add_contact( void )	{
 		else
 			older_contact = 0;
 	}
-	return ;
 }
 
 void	PhoneBook::search_contact()	{
 
-	std::cout << "voy a buscar un contacto" << std::endl;
-	//this->show_header();
-	return ;
+	int	i;
+	int	index_to_show;
+	int	to_show;
+	std::string	buff;
+	bool	validate;
+
+	//std::cout << "voy a buscar un contacto" << std::endl;
+	this->show_header();
+	i = older_contact;
+	while (i < 8 && i < this->amount)
+	{
+		this->contacts[i].show_info_contact();
+		i++;
+	}
+	i = 0;
+	while (i < older_contact)
+	{
+		this->contacts[i].show_info_contact();
+		i++;
+	}
+	std::cout << "Type index: ";
+	std::getline(std::cin, buff);
+	index_to_show = buff[0] - 48;
+	if (index_to_show < 1 || index_to_show > this->amount)
+		std::cout << "Invalid index" << std::endl;
+	else
+	{
+		to_show = this->find_contact_to_show(index_to_show);
+		this->contacts[to_show].display_contact();
+	}
+}
+
+int		PhoneBook::find_contact_to_show(int index_to_show)	{
+
+	int	i;
+
+	i = 0;
+	while (i < this->amount)
+	{
+		if (this->contacts[i].index == index_to_show)
+			break ;
+		i++;
+	}
+	return (i);
+}
+
+void	PhoneBook::show_header()	{
+
+	std::cout << "Index     |First name|Last name |Nickname  " << std::endl;
 }

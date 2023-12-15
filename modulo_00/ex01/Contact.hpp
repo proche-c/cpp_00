@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 class	Contact	{
 
@@ -28,7 +29,9 @@ public:
 
 	void	set_contact_info(int amount);
 	void	delete_contact_info( void );
-	void	set_new_index( void );
+	void	show_info_contact( void );
+	void	display_contact();
+	//void	set_new_index( void );
 
 private:
 
@@ -39,6 +42,7 @@ private:
 	std::string	darkest_secret;
 
 	bool	validate_phone_number(std::string	str);
+	bool	validate_name(std::string	str);
 
 };
 
