@@ -14,9 +14,6 @@
 # define CONTACT_HPP
 
 #include <string>
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
 
 class	Contact	{
 
@@ -31,18 +28,17 @@ public:
 	void	delete_contact_info( void );
 	void	show_info_contact( void );
 	void	display_contact();
-	//void	set_new_index( void );
 
 private:
 
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+	std::string	_first_name;
+	std::string	_last_name;
+	std::string	_nickname;
+	std::string	_phone_number;
+	std::string	_darkest_secret;
 
-	bool	validate_phone_number(std::string	str);
-	bool	validate_name(std::string	str);
+	bool	_validate_phone_number(std::string	str);
+	bool	_validate_name(std::string	str);
 
 };
 
