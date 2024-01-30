@@ -1,6 +1,6 @@
 SRCS = Contact.cpp \
 	PhoneBook.cpp \
-	main.cpp
+	test.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

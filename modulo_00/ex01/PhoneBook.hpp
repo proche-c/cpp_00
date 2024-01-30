@@ -30,10 +30,10 @@ public:
 
 private:
 
-	Contact	contacts[8];
+	Contact	_contacts[8];
 
-	void	show_header();
-	int		find_contact_to_show(int index_to_show);
+	void	_show_header();
+	int		_find_contact_to_show(int index_to_show);
 
 };
 
